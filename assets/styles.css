@@ -9,7 +9,8 @@
   padding: 0;
   margin: 0;
   border: none;
-  font-family: 'FantasqueSansMonoRegular', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Noto Sans Mono', 'Times New Roman', Times, serif;
+  color: var(--tan);
 }
 
 body {
@@ -21,13 +22,8 @@ body {
 
 button {
   background-color: var(--darkgreen);
-  color: var(--tan);
   border: 1px solid var(--tan);
   border-radius: 5px;
-}
-button img {
-  filter: invert(89%) sepia(24%) saturate(153%) hue-rotate(9deg) brightness(91%)
-    contrast(97%);
 }
 
 nav button {
@@ -54,11 +50,10 @@ aside {
 }
 #timer h1 {
   font-size: 4em;
+  font-weight: 500;
 }
 #timer .digit {
   grid-row: 2 / 3;
-  filter: invert(89%) sepia(24%) saturate(153%) hue-rotate(9deg) brightness(91%)
-    contrast(97%);
 }
 .up {
   grid-row: 1 / 2;
