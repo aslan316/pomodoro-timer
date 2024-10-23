@@ -1,9 +1,63 @@
+<!doctype html>
+
 <html>
   <head>
     <title>Pomodoro Timer</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="https://fontlibrary.org//face/fantasque-sans-mono"
+      type="text/css"
+    />
   </head>
   <body>
-    <h1>Test</h1>
+    <nav>
+      <button>Timer</button>
+      <button>Log</button>
+    </nav>
+
+    <div id="container">
+      <div id="timer">
+        <button class="tenminute timer-button up">
+          <img src="./images/menu-up.svg" alt="up" />
+        </button>
+        <button class="oneminute timer-button up">
+          <img src="./images/menu-up.svg" alt="up" />
+        </button>
+        <button class="tensecond timer-button up">
+          <img src="./images/menu-up.svg" alt="up" />
+        </button>
+        <button class="onesecond timer-button up">
+          <img src="./images/menu-up.svg" alt="up" />
+        </button>
+        <h1 class="digit">0</h1>
+        <h1 class="digit">0</h1>
+        <h1 class="digit">:</h1>
+        <h1 class="digit">0</h1>
+        <h1 class="digit">0</h1>
+        <button class="tenminute timer-button down">
+          <img src="./images/menu-down.svg" alt="down" />
+        </button>
+        <button class="oneminute timer-button down">
+          <img src="./images/menu-down.svg" alt="down" />
+        </button>
+        <button class="tensecond timer-button down">
+          <img src="./images/menu-down.svg" alt="down" />
+        </button>
+        <button class="onesecond timer-button down">
+          <img src="./images/menu-down.svg" alt="down" />
+        </button>
+      </div>
+
+      <aside>
+        <div id="label">Work</div>
+        <button id="play">
+          <img src="./images/play-pause.svg" alt="play/pause" />
+        </button>
+      </aside>
+    </div>
+
+    <button id="endsession">End Session</button>
   </body>
 </html>

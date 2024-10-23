@@ -1,0 +1,82 @@
+:root {
+  --darkgreen: #254336;
+  --lightgreen: #6b8a7a;
+  --tangreen: #b7b597;
+  --tan: #dad3be;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-family: 'FantasqueSansMonoRegular', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--lightgreen);
+}
+
+button {
+  background-color: var(--darkgreen);
+  color: var(--tan);
+  border: 1px solid var(--tan);
+  border-radius: 5px;
+}
+button img {
+  filter: invert(89%) sepia(24%) saturate(153%) hue-rotate(9deg) brightness(91%)
+    contrast(97%);
+}
+
+nav button {
+  border-radius: 0;
+}
+
+#container {
+  display: flex;
+}
+aside {
+  display: flex;
+  flex-direction: column;
+}
+
+#timer {
+  display: grid;
+  grid-template: 1fr 4em 1fr / repeat(5, 1fr);
+  text-align: center;
+  place-items: center;
+}
+#timer button {
+  width: 2vw;
+  height: 2vh;
+}
+#timer h1 {
+  font-size: 4em;
+}
+#timer .digit {
+  grid-row: 2 / 3;
+  filter: invert(89%) sepia(24%) saturate(153%) hue-rotate(9deg) brightness(91%)
+    contrast(97%);
+}
+.up {
+  grid-row: 1 / 2;
+  align-self: end;
+}
+.down {
+  grid-row: 3 / 4;
+  align-self: start;
+}
+.tensecond.up {
+  grid-area: 1 / 4 / 2 / 5;
+}
+.onesecond.up {
+  grid-area: 1 / 5 / 2 / 6;
+}
+.tensecond.down {
+  grid-area: 3 / 4 / 4 / 5;
+}
+.onesecond.down {
+  grid-area: 3 / 5 / 4 / 6;
+}
