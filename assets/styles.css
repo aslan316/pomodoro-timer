@@ -1,4 +1,5 @@
 :root {
+  --darkestgreen: #143225;
   --darkgreen: #254336;
   --lightgreen: #6b8a7a;
   --tangreen: #b7b597;
@@ -6,17 +7,24 @@
 }
 
 * {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
   border: none;
-  font-family: 'Noto Sans Mono', 'Times New Roman', Times, serif;
+  font-family: "Noto Sans Mono", "Times New Roman", Times, serif;
   color: var(--tan);
+  user-select: none;
 }
 
 body {
+  width: 600px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  border: 7px solid var(--darkestgreen);
+  border-radius: 10px;
   background-color: var(--lightgreen);
 }
 
@@ -24,32 +32,50 @@ button {
   background-color: var(--darkgreen);
   border: 1px solid var(--tan);
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+nav {
+  display: flex;
+  margin-bottom: 50px;
+}
 nav button {
-  border-radius: 0;
+  padding: 5px 10px;
+  font-size: 1.2em;
+  margin-top: 15px;
+}
+nav #timer-page {
+  background-color: var(--tangreen);
+  color: var(--darkgreen);
+  border: 2px solid var(--darkgreen);
+  margin-right: 10px;
 }
 
 #container {
   display: flex;
+  margin-bottom: 50px;
 }
 aside {
+  margin-left: 50px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 #timer {
   display: grid;
-  grid-template: 1fr 4em 1fr / repeat(5, 1fr);
+  grid-template: 1fr 7.5em 1fr / repeat(5, 1fr);
   text-align: center;
   place-items: center;
 }
 #timer button {
-  width: 2vw;
-  height: 2vh;
+  width: 30px;
+  height: 30px;
 }
 #timer h1 {
-  font-size: 4em;
+  font-size: 6em;
   font-weight: 500;
 }
 #timer .digit {
@@ -74,4 +100,26 @@ aside {
 }
 .onesecond.down {
   grid-area: 3 / 5 / 4 / 6;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+aside #label {
+  font-size: 3em;
+  font-weight: 600;
+}
+aside #play {
+  width: 50px;
+  height: 50px;
+}
+
+#endsession {
+  font-size: 1.2em;
+  padding: 0.1em 0.3em;
+  background-color: var(--tangreen);
+  color: var(--darkgreen);
+  border: 2px solid var(--darkgreen);
 }
