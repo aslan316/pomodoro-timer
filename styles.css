@@ -14,6 +14,7 @@
   font-family: "Noto Sans Mono", "Times New Roman", Times, serif;
   color: var(--tan);
   user-select: none;
+  -webkit-user-select: none;
 }
 
 body {
@@ -35,6 +36,15 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+button:hover {
+  background-color: var(--tangreen);
+  color: var(--darkgreen);
+  border: 1px solid var(--darkgreen);
+  img {
+    filter: invert(96%) sepia(97%) saturate(189%) hue-rotate(101deg)
+      brightness(90%) contrast(92%);
+  }
 }
 
 nav {
@@ -74,7 +84,7 @@ aside {
   width: 30px;
   height: 30px;
 }
-#timer h1 {
+#timer p {
   font-size: 6em;
   font-weight: 500;
 }
@@ -119,7 +129,4 @@ aside #play {
 #endsession {
   font-size: 1.2em;
   padding: 0.1em 0.3em;
-  background-color: var(--tangreen);
-  color: var(--darkgreen);
-  border: 2px solid var(--darkgreen);
 }

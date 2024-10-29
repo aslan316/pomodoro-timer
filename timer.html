@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <nav>
@@ -19,46 +20,44 @@
 
     <div id="container">
       <div id="timer">
-        <button class="tenminute timer-button up">
+        <button class="tenminute timer-button up" onclick="increment(600);">
           <img src="./images/menu-up.svg" alt="up" />
         </button>
-        <button class="oneminute timer-button up">
+        <button class="oneminute timer-button up" onclick="increment(60);">
           <img src="./images/menu-up.svg" alt="up" />
         </button>
-        <button class="tensecond timer-button up">
+        <button class="tensecond timer-button up" onclick="increment(10);">
           <img src="./images/menu-up.svg" alt="up" />
         </button>
-        <button class="onesecond timer-button up">
+        <button class="onesecond timer-button up" onclick="increment(1);">
           <img src="./images/menu-up.svg" alt="up" />
         </button>
-        <h1 class="digit tenminute">2</h1>
-        <h1 class="digit oneminute">5</h1>
-        <h1 class="digit">:</h1>
-        <h1 class="digit tensecond">0</h1>
-        <h1 class="digit onesecond">0</h1>
-        <button class="tenminute timer-button down">
+        <p id="tenminutedigit" class="digit"></p>
+        <p id="oneminutedigit" class="digit"></p>
+        <p class="digit">:</p>
+        <p id="tenseconddigit" class="digit"></p>
+        <p id="oneseconddigit" class="digit"></p>
+        <button class="tenminute timer-button down" onclick="decrement(600);">
           <img src="./images/menu-down.svg" alt="down" />
         </button>
-        <button class="oneminute timer-button down">
+        <button class="oneminute timer-button down" onclick="decrement(60);">
           <img src="./images/menu-down.svg" alt="down" />
         </button>
-        <button class="tensecond timer-button down">
+        <button class="tensecond timer-button down" onclick="decrement(10);">
           <img src="./images/menu-down.svg" alt="down" />
         </button>
-        <button class="onesecond timer-button down">
+        <button class="onesecond timer-button down" onclick="decrement(1);">
           <img src="./images/menu-down.svg" alt="down" />
         </button>
       </div>
 
       <aside>
-        <div id="label">Work</div>
-        <button id="play">
+        <div id="label">Study</div>
+        <button id="play" onclick="toggleTimer();">
           <img src="./images/play-pause.svg" alt="play/pause" />
         </button>
       </aside>
     </div>
-
     <button id="endsession">End Session</button>
-    <script src="script.js"></script>
   </body>
 </html>
