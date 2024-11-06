@@ -22,13 +22,13 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  margin-top: 10vh;
+  padding-top: 10vh;
 
   background-color: var(--lightgreen);
 }
 
 #border {
-  width: 50vw;
+  width: 70vw;
   height: 50vh;
   min-height: min-content;
   border: 7px solid var(--darkestgreen);
@@ -82,7 +82,16 @@ table {
   width: 90%;
   background-color: var(--darkgreen);
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+table,
+th,
+td {
+  border: 3px solid var(--darkestgreen);
+  border-collapse: collapse;
+  padding: 10px;
 }
 
 thead {

@@ -22,7 +22,7 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  margin-top: 10vh;
+  padding-top: 10vh;
 
   background-color: var(--lightgreen);
 }

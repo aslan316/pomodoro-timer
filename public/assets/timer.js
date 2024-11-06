@@ -10,7 +10,7 @@ function toggleTimer() {
   if (!timerOn) {
     timerOn = true;
     timerIntervalId = setInterval(() => {
-      decrement(1);
+      decrement();
     }, 1000);
   } else {
     timerOn = false;
@@ -59,14 +59,20 @@ function resetDisplay() {
   updateDisplay();
 }
 
+function decrementByButton(multiplyer) {
+  let num = currentTimeSeconds - multiplyer;
+  currentTimeSeconds = num < 1 ? 1 : num;
+  updateDisplay();
+}
+
 function increment(multiplyer) {
   let num = currentTimeSeconds + multiplyer;
   currentTimeSeconds = num > 5999 ? 5999 : num;
   updateDisplay();
 }
 
-function decrement(multiplyer) {
-  let num = currentTimeSeconds - multiplyer;
+function decrement() {
+  let num = currentTimeSeconds - 1;
   currentTimeSeconds = num < 0 ? 0 : num;
   updateDisplay();
 }
@@ -96,6 +102,7 @@ function fadeOut(target) {
 
 startSessionButton.addEventListener("click", () => {
   sessionStartTime = Date.now();
+  console.log(sessionStartTime);
   blurry.style.animationDuration = "1s";
   blurry.style.animationName = "blurOut";
   blurry.style.filter = "none";
@@ -104,7 +111,8 @@ startSessionButton.addEventListener("click", () => {
 });
 
 endSessionButton.addEventListener("click", () => {
-  lengthSessionMinutes = (new Date.now() - sessionStartTime) / 60000;
+  lengthSessionMinutes = (Date.now() - sessionStartTime) / 60000;
+  console.log(lengthSessionMinutes);
   blurry.style.animationDuration = "1s";
   blurry.style.animationName = "blurIn";
   blurry.style.filter = "blur(10px)";
@@ -118,21 +126,30 @@ form.addEventListener("submit", async (e) => {
   fadeOut(form);
   setTimeout(fadeIn(startSessionButton), 500);
 
-  const description = document.querySelector(input).value;
+  const description = document.querySelector("input").value;
   const currentDate = new Date().toLocaleString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
   });
+  console.log(currentDate);
+  console.log(lengthSessionMinutes);
   try {
     const response = await fetch("/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ currentDate, lengthSessionMinutes, description }),
+      body: JSON.stringify({
+        currentDate: currentDate,
+        lengthSessionMinutes: lengthSessionMinutes,
+        description: description,
+      }),
     });
+    console.log("saved");
   } catch (error) {
-    console.eror("Error:", error);
+    console.error("Error:", error);
   }
+
+  document.querySelector("input").value = "";
 });

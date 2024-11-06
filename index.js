@@ -1,16 +1,18 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const sqlite3 = require("sqlite3").verbose();
 const path = require("node:path");
 
 const app = express();
 const port = 8080;
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
+
 // Middleware to parse JSON data
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-
-app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
   res.setHeader("Content-Security-Policy", "default-src '*'");
@@ -28,7 +30,13 @@ db.serialize(() => {
 
 // Route to handle form submission
 app.post("/submit", (req, res) => {
-  const { date, sessionLengthMinutes, description } = req.body;
+  const date = req.body.currentDate;
+  const sessionLengthMinutes =
+    Math.round(req.body.lengthSessionMinutes * 100) / 100;
+  const description = req.body.description;
+  console.log(date);
+  console.log(sessionLengthMinutes);
+  console.log(description);
 
   // Insert the data into the SQLite database
   db.run(
@@ -47,15 +55,15 @@ app.post("/submit", (req, res) => {
 
 //route to send to log.html
 app.get("/log", (req, res) => {
-  console.log("hello");
-  app.render("log");
   db.all("SELECT * FROM sessions", [], (err, rows) => {
+    console.log("queried from db");
     if (err) {
+      console.error("error:", err);
       return res
         .status(500)
         .json({ error: "Error retrieving data from the database." });
     }
-    app.render("log", { sessions: res.json(rows) }); // Send the data as JSON
+    res.render("logpage", { sessions: rows });
   });
 });
 
