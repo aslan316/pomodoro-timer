@@ -1,0 +1,90 @@
+:root {
+  --darkestgreen: #143225;
+  --darkgreen: #254336;
+  --lightgreen: #6b8a7a;
+  --tangreen: #b7b597;
+  --tan: #dad3be;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-family: "Noto Sans Mono", "Times New Roman", Times, serif;
+  color: var(--tan);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+
+  background-color: var(--lightgreen);
+}
+
+#border {
+  width: 50vw;
+  height: 50vh;
+  min-height: min-content;
+  border: 7px solid var(--darkestgreen);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vh 0;
+  gap: 2vh;
+}
+
+nav {
+  display: flex;
+}
+nav #timer-page {
+  background-color: var(--darkgreen);
+  border: 1px solid var(--tan);
+  border-radius: 5px;
+  color: var(--tan);
+  margin-right: 10px;
+}
+nav #log-page,
+nav #timer-page:hover {
+  background-color: var(--tangreen);
+  color: var(--darkgreen);
+  border: 1px solid var(--darkgreen);
+}
+
+a {
+  text-decoration: none;
+  background-color: var(--darkgreen);
+  border: 1px solid var(--tan);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: min(3vw, 35px);
+  min-height: min(3vw, 35px);
+  padding: 0.3vh 0.6vw;
+  font-size: calc(1em + 1vh);
+}
+
+a:hover {
+  background-color: var(--tangreen);
+  color: var(--darkgreen);
+  border: 1px solid var(--darkgreen);
+}
+
+table {
+  width: 90%;
+  background-color: var(--darkgreen);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+thead {
+  text-align: center;
+}

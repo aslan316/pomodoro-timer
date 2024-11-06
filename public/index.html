@@ -1,0 +1,86 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="./assets/timer.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/timer-outline.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div id="border">
+      <div id="beforestart">
+        <button>Start Session</button>
+      </div>
+
+      <form id="afterend" class="hidden">
+        <input type="text" placeholder="what you worked on..." />
+        <button>Submit</button>
+      </form>
+
+      <nav>
+        <a href="./" id="timer-page">Timer</a>
+        <a href="./log" id="log-page">Log</a>
+      </nav>
+      <div id="blur">
+        <div id="container">
+          <div id="timer">
+            <button class="tenminute timer-button up" onclick="increment(600);">
+              <img src="./images/menu-up.svg" alt="up" />
+            </button>
+            <button class="oneminute timer-button up" onclick="increment(60);">
+              <img src="./images/menu-up.svg" alt="up" />
+            </button>
+            <button class="tensecond timer-button up" onclick="increment(10);">
+              <img src="./images/menu-up.svg" alt="up" />
+            </button>
+            <button class="onesecond timer-button up" onclick="increment(1);">
+              <img src="./images/menu-up.svg" alt="up" />
+            </button>
+            <p id="tenminutedigit" class="digit"></p>
+            <p id="oneminutedigit" class="digit"></p>
+            <p class="digit">:</p>
+            <p id="tenseconddigit" class="digit"></p>
+            <p id="oneseconddigit" class="digit"></p>
+            <button
+              class="tenminute timer-button down"
+              onclick="decrementByButton(600);"
+            >
+              <img src="./images/menu-down.svg" alt="down" />
+            </button>
+            <button
+              class="oneminute timer-button down"
+              onclick="decrementByButton(60);"
+            >
+              <img src="./images/menu-down.svg" alt="down" />
+            </button>
+            <button
+              class="tensecond timer-button down"
+              onclick="decrementByButton(10);"
+            >
+              <img src="./images/menu-down.svg" alt="down" />
+            </button>
+            <button
+              class="onesecond timer-button down"
+              onclick="decrementByButton(1);"
+            >
+              <img src="./images/menu-down.svg" alt="down" />
+            </button>
+          </div>
+
+          <aside>
+            <div id="label">Study</div>
+            <button id="play" onclick="toggleTimer();">
+              <img src="./images/play-pause.svg" alt="play/pause" />
+            </button>
+          </aside>
+        </div>
+        <button id="endsession">End Session</button>
+      </div>
+    </div>
+    <script src="./assets/timer." defer></script>
+  </body>
+</html>

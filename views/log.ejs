@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro Log</title>
+    <link rel="stylesheet" href="../public/assets/log.css" />
+  </head>
+  <body>
+    <div id="border">
+      <nav>
+        <a href="./" id="timer-page">Timer</a>
+        <a href="./log" id="log-page">Log</a>
+      </nav>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Time Studdied</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%  sessions.forEach((row) => { %>
+            <tr>
+              <td> <% row.date %> </td>
+              <td> <% row.sessionLengthMinutes %> </td>
+              <td> <% row.description %> </td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
